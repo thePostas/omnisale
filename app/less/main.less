@@ -1,14 +1,22 @@
 //@import url("_header.less");
 
-body {
+body, input {
   margin: 0;
   padding: 0;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+body {
   list-style: none;
   text-decoration: none;
   filter: brightness(70%);
 }
 
 .wrapper {
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,6 +29,9 @@ body {
 }
 
 .authorization-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 1000px;
   height: 780px;
@@ -29,7 +40,6 @@ body {
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 0 50px black;
-
   &:before {
     content: '';
     width: 101%;
@@ -41,6 +51,45 @@ body {
     bottom: 0;
     background: inherit;
     filter: brightness(180%) url(#blur);;
+  }
+  &__inner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 0.6;
+    z-index: 5;
+    height: 80%;
+    background-color: #005abe;
+    @media screen and (max-width: 768px) {
+      flex-grow: 0.9;
+    }
+    &-avatar {
+      width: 150px;
+      height: 150px;
+      background: url("../img/avatar.png") no-repeat 50% 50%;
+      background-size: 500%;
+      border-radius: 50%;
+    }
+    &-fieldset {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: none;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    &-input {
+      width: 100%;
+      height: 80px;
+      border-radius: 50px;
+    }
+    &-login {
+
+    }
+    &-password {
+
+    }
   }
 }
 
