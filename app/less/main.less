@@ -5,12 +5,48 @@ body {
   padding: 0;
   list-style: none;
   text-decoration: none;
+  filter: brightness(70%);
 }
 
 .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 1800px;
+  min-width: 320px;
   max-width: 2880px;
   background: url("../img/background.png") no-repeat center center;
   background-clip: content-box;
+}
+
+.authorization-form {
+  position: relative;
+  width: 1000px;
+  height: 780px;
+  min-width: 320px;
+  background: inherit;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 50px black;
+
+  &:before {
+    content: '';
+    width: 101%;
+    height: 101%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: brightness(180%) url(#blur);;
+  }
+}
+
+svg {
+  height:0;
+  width: 0;
+  position: absolute;
+  z-index: 0;
 }
